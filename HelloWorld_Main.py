@@ -7,9 +7,10 @@ def authenticate():
 
     for attempts in range(5):
         print("Enter ID: ")
-        ID = input.lower()
+        ID = input()
+        ID = ID.upper()
 
-        if ID == 'exit':
+        if ID == 'EXIT':
             print('Exiting...\n')
             sys.exit()
 
@@ -74,14 +75,54 @@ def guessGame():
     else:
         print('Nope. The number I was thinking of was ' + str(secretNumber))
 
-authenticate()
+def collatzOWN():
+    number = random.randint(2,99)
+    n = number % 2
+
+    print(number)
+    print(n)
+    #even number
+    if n == 0:
+        while number != 0:
+            number = number // 2
+            print(number)
+
+    elif n == 1:
+        while number != 0:
+            number = 3 * number + 1
+            print(number)
+
+    else:
+        print('Unforseen error, exiting.')
+        sys.exit()
+
+def collatz():
+    number = random.randint(2, 99)
+
+    if number % 2 == 0:
+        print(number // 2)
+        return number // 2
+
+    elif number % 2 == 1:
+        result = 3 * number + 1
+        print(result)
+        return result
+
 
 print('What do you want to do ?')
 print('1- Play Number Guess')
+print('2- Collatz Own')
+print('3- Collatz ')
 selection = input()
 
 if selection == "1":
     guessGame()
+
+elif selection == "2":
+    collatzOWN()
+
+elif selection == "3":
+    collatz()
 
 else:
     sys.exit()
