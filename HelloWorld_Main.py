@@ -7,7 +7,7 @@ def authenticate():
 
     for attempts in range(5):
         print("Enter ID: ")
-        ID = input()
+        ID = input.lower()
 
         if ID == 'exit':
             print('Exiting...\n')
