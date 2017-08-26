@@ -6,30 +6,33 @@ attempts = 0
 def authenticate():
 
     for attempts in range(5):
-        print("ID: ")
+        print("Enter ID: ")
         ID = input()
 
-        if ID != 'JOE':
+        if ID == 'exit':
+            sys.exit()
+
+        elif ID == 'JOE':
+            print('Enter password: ')
+            password = input()
+            if password == 'swordfish':
+                break
+
+
+        else:
             print('Wrong ID. ')
             attempts += 1
             print(attempts)
             if attempts == 5:
                 print('No more tokens, wait two hours. Password changed, contact admin')
+                # figure how to setup a timer
                 password = 'fishtank'
                 sys.exit()
 
             continue
-        elif ID == 'exit':
-            sys.exit()
 
-        else:
-            print('Enter password: ')
-            password = input()
-        if password == 'swordfish':
-                    break
     print('Access granted')
     return
-
 
 def guessGame():
     secretNumber = random.randint(1, 20)
