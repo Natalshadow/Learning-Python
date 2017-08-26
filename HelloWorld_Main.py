@@ -10,6 +10,7 @@ def authenticate():
         ID = input()
 
         if ID == 'exit':
+            print('Exiting...\n')
             sys.exit()
 
         elif ID == 'JOE':
