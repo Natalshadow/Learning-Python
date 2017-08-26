@@ -38,6 +38,7 @@ def authenticate():
     print('Access granted')
     return
 
+#GuessGame is working as intended
 def guessGame():
     secretNumber = random.randint(1, 20)
 
@@ -77,6 +78,7 @@ def guessGame():
     else:
         print('Nope. The number I was thinking of was ' + str(secretNumber))
 
+#my own collatz attempts, it's messy and unoptimized, not even working as intended.
 def collatzOWN():
     number = random.randint(2,99)
     n = number % 2
@@ -98,6 +100,7 @@ def collatzOWN():
         print('Unforseen error, exiting.')
         sys.exit()
 
+#the collatz used as reference, to check behaviours and results.
 def collatz():
     number = random.randint(2, 99)
 
@@ -111,6 +114,7 @@ def collatz():
         return result
 
 
+#function selector
 print('What do you want to do ?')
 print('1- Play Number Guess')
 print('2- Collatz Own')
