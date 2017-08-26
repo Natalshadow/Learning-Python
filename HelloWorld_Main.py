@@ -3,6 +3,8 @@ import sys
 import random
 attempts = 0
 
+#fake authentication function
+
 def authenticate():
 
     for attempts in range(5):
