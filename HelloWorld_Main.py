@@ -2,7 +2,8 @@
 import sys
 import random
 attempts = 0
-
+list = [1, 2, 3]
+print(list)
 #fake authentication function
 
 def authenticate():
