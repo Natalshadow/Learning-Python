@@ -114,15 +114,27 @@ def collatz():
         print(result)
         return result
 
+def magicBall():
+    messages = ['Australia',
+                'Brazil',
+                'Venezuela',
+                'USA']
+    print(messages)
+
+    print(messages[random.randint(0, len(messages) -1)])
+
+
 
 #function selector
 print('What do you want to do ?')
-print('1- Play Number Guess')
-print('2- Collatz Own')
-print('3- Collatz ')
+liste = ['Number Guess',
+         'Collatz by Me',
+         'Collatz by Git',
+         'MagicBall of Trips']
+print('Your options are : %s ' % (liste))
 selection = input()
 
-if selection == "1":
+if selection == 1:
     guessGame()
 
 elif selection == "2":
