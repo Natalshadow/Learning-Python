@@ -4,8 +4,8 @@ import random
 attempts = 0
 list = [1, 2, 3]
 print(list)
-#fake authentication function
 
+#fake authentication function
 def authenticate():
 
     for attempts in range(5):
@@ -114,6 +114,7 @@ def collatz():
         print(result)
         return result
 
+#List exercise - not yet understood how to use the list in the input and not rely on strings.
 def magicBall():
     messages = ['Australia',
                 'Brazil',
@@ -134,6 +135,7 @@ liste = ['Number Guess',
 print('Your options are : %s ' % (liste))
 selection = input()
 
+#I want to get rid of these and make it as short as possible relying on lists
 if selection == 1:
     guessGame()
 
