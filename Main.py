@@ -1,10 +1,7 @@
-#tentative d'autentifier un User
 import random
 import sys
-
-attempts = 0
-list = [1, 2, 3]
-print(list)
+import datetime
+import time
 
 #fake authentication function
 def authenticate():
