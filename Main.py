@@ -1,8 +1,12 @@
 #tentative d'autentifier un User
-import sys
 import random
-attempts = 0
+import sys
 
+attempts = 0
+list = [1, 2, 3]
+print(list)
+
+#fake authentication function
 def authenticate():
 
     for attempts in range(5):
@@ -36,45 +40,7 @@ def authenticate():
     print('Access granted')
     return
 
-def guessGame():
-    secretNumber = random.randint(1, 20)
-
-    print('#Initializing hp var...\n')
-    for hp in range(6, 0, -1):
-        hp -= 1
-        print(hp)
-    print('Ready...\n')
-
-    print('Guess the number, come on ! You have five attempts!\n')
-
-    for hp in range(5, 0, -1):
-        guess = int(input())
-        hp_init = 5
-
-        if guess > secretNumber:
-            hp = hp - 1
-            print('Too high, try again.')
-            print('You have ' + str(hp) + ' attempts left')
-            print(hp)
-            guessesTaken = hp_init - hp
-            print(str(guessesTaken))
-            continue
-        elif guess < secretNumber:
-            hp = hp - 1
-            print('Too low, try again')
-            print('You have ' + str(hp) + ' attempts left')
-            print('HP : ' + str(hp))
-            guessesTaken = hp_init - hp
-            print('guessesTaken = ' + str(guessesTaken))
-            continue
-        else:
-            break
-
-    if guess == secretNumber:
-        print('Good job! You guessed my number in ' + str(guessesTaken) + ' guesses!')
-    else:
-        print('Nope. The number I was thinking of was ' + str(secretNumber))
-
+#my own collatz attempts, it's messy and unoptimized, not even working as intended.
 def collatzOWN():
     number = random.randint(2,99)
     n = number % 2
@@ -96,6 +62,7 @@ def collatzOWN():
         print('Unforseen error, exiting.')
         sys.exit()
 
+#the collatz used as reference, to check behaviours and results.
 def collatz():
     number = random.randint(2, 99)
 
@@ -108,15 +75,30 @@ def collatz():
         print(result)
         return result
 
+#List exercise - not yet understood how to use the list in the input and not rely on strings.
+def magicBall():
+    messages = ['Australia',
+                'Brazil',
+                'Venezuela',
+                'USA']
+    print(messages)
 
+    print(messages[random.randint(0, len(messages) -1)])
+
+
+
+#function selector
 print('What do you want to do ?')
-print('1- Play Number Guess')
-print('2- Collatz Own')
-print('3- Collatz ')
+liste = ['Number Guess',
+         'Collatz by Me',
+         'Collatz by Git',
+         'MagicBall of Trips']
+print('Your options are : %s ' % (liste))
 selection = input()
 
+#I want to get rid of these and make it as short as possible relying on lists
 if selection == "1":
-    guessGame()
+    import Games
 
 elif selection == "2":
     collatzOWN()
