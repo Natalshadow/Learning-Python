@@ -25,3 +25,25 @@ def tauxRemplissage():
         else:
             listLocataires.append(locataire)
 
+
+
+def simuTauxImposition():
+
+    RSI = 33
+    revenu = 2
+    recouvrement = 0
+    fraisConsulaire = 0
+
+    resultat = RSI + revenu + recouvrement + fraisConsulaire
+    taux = resultat/100
+
+    print('This function is used to calculate the tax rate : ')
+
+    print('Auto Entreprise : %s' %(resultat))
+    print('Entrez un CA pour simuler vos charges : ')
+    CA = int(input())
+    result = (taux * CA)
+
+    print(result)
+
+simuTauxImposition()
