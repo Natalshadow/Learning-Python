@@ -1,24 +1,20 @@
-# Adding user input to a list
 import sys
-
-def list_try():
-    liste = []
-
-    while True:
-        print('List trial, input items: ')
-        item = input()
-        item.lower()
+import calendar
+import time
+import datetime
 
 
-        if item == "exit":
-            print('Entered exit, exiting.')
-            sys.exit()
+arrival = datetime.date(2016,8,1)
+departure = datetime.date(2017,1,20)
+test = departure - arrival
+print('%s - %s = %s' %(arrival, departure, test))
 
-        elif item == "print":
-            print(liste)
+Fanny = {'Arrival': datetime.date(2016,8,1), 'Departure': datetime.date(2017,1,20), 'Rent': 440}
 
-        else:
-            liste.append(item)
+duration = (Fanny['Departure'] - Fanny['Arrival']) / 30
+incomes = duration * Fanny['Rent']
 
-
-list_try()
+print('Duration')
+print(duration)
+print('Incomes')
+print(incomes)
