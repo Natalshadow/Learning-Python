@@ -107,6 +107,9 @@ elif selection == "2":
 elif selection == "3":
     collatz()
 
+elif selection == "4":
+    from Games import magicBall
+    magicBall()
 else:
     sys.exit()
 
