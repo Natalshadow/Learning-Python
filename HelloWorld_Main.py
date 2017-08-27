@@ -54,6 +54,7 @@ def guessGame():
     for hp in range(5, 0, -1):
         guess = int(input())
         hp_init = 5
+        guessesTaken = hp_init - hp
 
         if guess > secretNumber:
             hp = hp - 1
@@ -136,7 +137,7 @@ print('Your options are : %s ' % (liste))
 selection = input()
 
 #I want to get rid of these and make it as short as possible relying on lists
-if selection == 1:
+if selection == "1":
     guessGame()
 
 elif selection == "2":
