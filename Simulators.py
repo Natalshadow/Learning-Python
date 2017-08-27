@@ -1,5 +1,5 @@
 #File containing functions that are designed to simulate stuff
-
+import sys
 
 def incomesProjection():
 
@@ -13,4 +13,15 @@ def incomesProjection():
 
         print(result)
 
-incomesProjection()
+def tauxRemplissage():
+    listLocataires = []
+    while True:
+        print("Entrer nouveau locataire, print pour afficher la liste, exit pour terminer le programme.")
+        locataire = input()
+        if locataire == "exit":
+            sys.exit()
+        elif locataire == "print":
+            print(listLocataires)
+        else:
+            listLocataires.append(locataire)
+
