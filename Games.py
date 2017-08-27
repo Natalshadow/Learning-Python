@@ -39,3 +39,11 @@ def guessGame():
         print('Good job! You guessed my number in ' + str(guessesTaken) + ' guesses!')
     else:
         print('Nope. The number I was thinking of was ' + str(secretNumber))
+
+def magicBall():
+
+    message = ['Brazil',
+               'Australia',
+               'USA']
+    print('You shall go to : ')
+    print(message[random.randint(0, len(message) - 1)])

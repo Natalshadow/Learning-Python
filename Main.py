@@ -1,10 +1,7 @@
-#tentative d'autentifier un User
 import random
 import sys
-
-attempts = 0
-list = [1, 2, 3]
-print(list)
+import datetime
+import time
 
 #fake authentication function
 def authenticate():
@@ -42,50 +39,20 @@ def authenticate():
 
 #my own collatz attempts, it's messy and unoptimized, not even working as intended.
 def collatzOWN():
-    number = random.randint(2,99)
-    n = number % 2
 
-    print(number)
-    print(n)
-    #even number
-    if n == 0:
-        while number != 0:
-            number = number // 2
-            print(number)
-
-    elif n == 1:
-        while number != 0:
-            number = 3 * number + 1
-            print(number)
-
-    else:
-        print('Unforseen error, exiting.')
-        sys.exit()
 
 #the collatz used as reference, to check behaviours and results.
 def collatz():
-    number = random.randint(2, 99)
+    number = int(input())
+    while number != 1:
+        if number % 2 == 0:
+            print(number // 2)
+            return number // 2
 
-    if number % 2 == 0:
-        print(number // 2)
-        return number // 2
-
-    elif number % 2 == 1:
-        result = 3 * number + 1
-        print(result)
-        return result
-
-#List exercise - not yet understood how to use the list in the input and not rely on strings.
-def magicBall():
-    messages = ['Australia',
-                'Brazil',
-                'Venezuela',
-                'USA']
-    print(messages)
-
-    print(messages[random.randint(0, len(messages) -1)])
-
-
+        elif number % 2 == 1:
+            result = 3 * number + 1
+            print(result)
+            return result
 
 #function selector
 print('What do you want to do ?')
@@ -107,6 +74,9 @@ elif selection == "2":
 elif selection == "3":
     collatz()
 
+elif selection == "4":
+    from Games import magicBall
+    magicBall()
 else:
     sys.exit()
 
