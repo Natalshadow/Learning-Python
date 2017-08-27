@@ -39,5 +39,3 @@ def guessGame():
         print('Good job! You guessed my number in ' + str(guessesTaken) + ' guesses!')
     else:
         print('Nope. The number I was thinking of was ' + str(secretNumber))
-
-guessGame()

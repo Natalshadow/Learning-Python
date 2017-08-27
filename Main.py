@@ -98,7 +98,8 @@ selection = input()
 
 #I want to get rid of these and make it as short as possible relying on lists
 if selection == "1":
-    import Games
+    from Games import guessGame
+    guessGame()
 
 elif selection == "2":
     collatzOWN()
