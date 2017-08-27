@@ -1,6 +1,7 @@
 #tentative d'autentifier un User
-import sys
 import random
+import sys
+
 attempts = 0
 list = [1, 2, 3]
 print(list)
@@ -39,46 +40,7 @@ def authenticate():
     print('Access granted')
     return
 
-#GuessGame is working as intended
-def guessGame():
-    secretNumber = random.randint(1, 20)
 
-    print('#Initializing hp var...\n')
-    for hp in range(6, 0, -1):
-        hp -= 1
-        print(hp)
-    print('Ready...\n')
-
-    print('Guess the number, come on ! You have five attempts!\n')
-
-    for hp in range(5, 0, -1):
-        guess = int(input())
-        hp_init = 5
-        guessesTaken = hp_init - hp
-
-        if guess > secretNumber:
-            hp = hp - 1
-            print('Too high, try again.')
-            print('You have ' + str(hp) + ' attempts left')
-            print(hp)
-            guessesTaken = hp_init - hp
-            print(str(guessesTaken))
-            continue
-        elif guess < secretNumber:
-            hp = hp - 1
-            print('Too low, try again')
-            print('You have ' + str(hp) + ' attempts left')
-            print('HP : ' + str(hp))
-            guessesTaken = hp_init - hp
-            print('guessesTaken = ' + str(guessesTaken))
-            continue
-        else:
-            break
-
-    if guess == secretNumber:
-        print('Good job! You guessed my number in ' + str(guessesTaken) + ' guesses!')
-    else:
-        print('Nope. The number I was thinking of was ' + str(secretNumber))
 
 #my own collatz attempts, it's messy and unoptimized, not even working as intended.
 def collatzOWN():
@@ -138,7 +100,7 @@ selection = input()
 
 #I want to get rid of these and make it as short as possible relying on lists
 if selection == "1":
-    guessGame()
+    import Games
 
 elif selection == "2":
     collatzOWN()
