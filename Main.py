@@ -40,8 +40,6 @@ def authenticate():
     print('Access granted')
     return
 
-
-
 #my own collatz attempts, it's messy and unoptimized, not even working as intended.
 def collatzOWN():
     number = random.randint(2,99)
